@@ -1,13 +1,13 @@
 ###############################################################################
 # Build AWS Cli
 ###############################################################################
-FROM alpine:3.19.1 AS BUILD
+FROM alpine:3.20.0 AS BUILD
 
 # renovate: datasource=github-tags depName=aws/aws-cli extractVersion=(?<version>.*)$
 ARG AWS_CLI_VERSION=2.15.56
 
 # Install dependencies
-RUN apk add --no-cache --update git build-base libffi-dev cmake python3 py3-pip python3-dev gcompat
+RUN apk add --no-cache --update git build-base libffi-dev cmake python3 py3-pip python3-dev py3-setuptools py3-distutils-extra gcompat
 
 # Build AWS Cli
 WORKDIR /tmp
@@ -20,7 +20,7 @@ RUN git clone --single-branch --depth 1 -b ${AWS_CLI_VERSION} https://github.com
 ###############################################################################
 # AWS Cli Docker Image
 ###############################################################################
-FROM alpine:3.19.1
+FROM alpine:3.20.0
 LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 
 # Install dependencies

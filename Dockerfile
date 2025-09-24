@@ -4,7 +4,7 @@
 FROM alpine:3.19.1 AS BUILD
 
 # renovate: datasource=github-tags depName=aws/aws-cli extractVersion=(?<version>.*)$
-ARG AWS_CLI_VERSION=2.31.0
+ARG AWS_CLI_VERSION=2.31.1
 
 # Install dependencies
 RUN apk add --no-cache --update git build-base libffi-dev cmake python3 py3-pip python3-dev gcompat

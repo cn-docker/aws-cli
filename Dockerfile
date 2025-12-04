@@ -23,7 +23,7 @@ RUN curl "https://awscli.amazonaws.com/awscli-${AWS_CLI_VERSION}.tar.gz" -o "aws
 ###############################################################################
 # AWS Cli Docker Image
 ###############################################################################
-FROM alpine:3.22
+FROM alpine:3.23
 LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 
 # Install dependencies

@@ -4,7 +4,7 @@
 FROM python:3.11-alpine AS build
 
 # renovate: datasource=github-tags depName=aws/aws-cli extractVersion=(?<version>.*)$
-ARG AWS_CLI_VERSION=2.31.14
+ARG AWS_CLI_VERSION=2.32.13
 
 # Change workdir
 WORKDIR /tmp
@@ -23,7 +23,7 @@ RUN curl "https://awscli.amazonaws.com/awscli-${AWS_CLI_VERSION}.tar.gz" -o "aws
 ###############################################################################
 # AWS Cli Docker Image
 ###############################################################################
-FROM alpine:3.22
+FROM alpine:3.23
 LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 
 # Install dependencies

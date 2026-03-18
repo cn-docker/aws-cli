@@ -4,7 +4,7 @@
 FROM python:3.11-alpine AS build
 
 # renovate: datasource=github-tags depName=aws/aws-cli extractVersion=(?<version>.*)$
-ARG AWS_CLI_VERSION=2.34.11
+ARG AWS_CLI_VERSION=2.34.12
 
 # Change workdir
 WORKDIR /tmp
